@@ -43,12 +43,6 @@ function countDownTimer(num) {
 
   }
 };
-  /*
-  let count= 0;
-  return function() {
-    count++;
-    return count
-  } */
 
 /*  if (num > 0) {
 
