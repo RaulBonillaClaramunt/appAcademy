@@ -34,7 +34,6 @@ function recVolume(height) {
   return returnFunc = (x) => {
 
     if (limit > 0) {
-
       result = result * x;
 
       if (limit > 1) {
@@ -49,7 +48,6 @@ function recVolume(height) {
       return result;
     }
   }
-
 };
 /*
 let table1 = recVolume(5); // returns a function
