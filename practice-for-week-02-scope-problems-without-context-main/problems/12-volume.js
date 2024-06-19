@@ -23,18 +23,46 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
+//set a counter
+//write a return function
+
+
 function recVolume(height) {
-  return returnFunc1 = (width) => {
-    return returnFunc2 = (lenght) => {
-      return height * width * length;
+  let limit = 2;
+  let result = height;
+
+  return returnFunc = (x) => {
+
+    if (limit > 0) {
+
+      result = result * x;
+
+      if (limit > 1) {
+        limit--;
+        return returnFunc;
+      } else {
+        limit--;
+        return result;
+      }
+
+    } else {
+      return result;
     }
   }
-}
 
+};
+/*
 let table1 = recVolume(5); // returns a function
-table1(4); // returns a function
+console.log(recVolume);
+console.log(table1(4)); // returns a function
 console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
 
+let table2 = recVolume(3); // returns a function
+table2(2); // returns a function
+console.log(table2(1)); // prints 6
+console.log(table2(75)); // STILL prints 6
+*/
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = recVolume;
