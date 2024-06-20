@@ -22,47 +22,14 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
-
-const smoothieMachine = (...ingredients) => {
-  let recipe = [];
-
-  return combination = () => {
-    let additionalIngredients = Array.from(arguments)
-
-    for (let i = 0; i < additionalIngredients.length; i++) {
-      recipe.push(additionalIngredients[i]);
-    }
-
-    let smoothie = "I'm having a smoothie with "
-    smoothie += recipe.join(' and');
-
-    return smoothie;
-  }
-
+function smoothieMachine(...ingredients) {
+  return function(...addIngredients) {
+      let recipe = [...ingredients, ...addIngredients];
+      return "I'm having a smoothie with " + recipe.join(' and ');
+      //result += ;
+      //return result;
+  };
 };
-/*
-function smoothieMachine() {
-  let ingredients = [];
-
-  return function() {
-      let additionalIngredients = Array.from(arguments);
-
-      // Concatenate ingredients arrays
-      for (let i = 0; i < additionalIngredients.length; i++) {
-          ingredients.push(additionalIngredients[i]);
-      }
-
-      // Format the output string
-      let smoothie = "I'm having a smoothie with";
-      if (ingredients.length === 0) {
-          smoothie += " no additional ingredients";
-      } else {
-          smoothie += " " + ingredients.join(" and");
-      }
-
-      return smoothie;
-  }
-}*/
 
 let smoothie1 = smoothieMachine();
 
