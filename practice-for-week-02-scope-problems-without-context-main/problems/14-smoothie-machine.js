@@ -22,42 +22,13 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
-/*
-const smoothieMachine = (...ingredients) => {
-  let recipe = "";
-  let count = 1;
 
-  return returnFunc = (string) => {
-    for (let ingredient of ingredients) {
-
-      if (count = 1) {
-        count++;
-        recipe = "I'm having a smoothie with " + ingredient;
-
-      } else {
-          recipe += " and " + ingredient;
-          //return recipe;
-      }
-
-    }
-  return recipe;
-  }
-
+function smoothieMachine(...ingredients) {
+  return function(...addIngredients) {
+      let recipe = [...ingredients, ...addIngredients];
+      return "I'm having a smoothie with " + recipe.join(' and ');
+  };
 };
-*/
-
-const smoothieMachine = (...ingredients) => {
-  return function(...additionalIngredients) {
-      // Combine all ingredients from smoothieMachine and the returned function
-      let allIngredients = [...ingredients, ...additionalIngredients];
-
-      // Format the output string
-      let smoothie = "I'm having a smoothie with " + allIngredients.join(" and ");
-
-      return smoothie;
-  }
-}
-
 
 let smoothie1 = smoothieMachine();
 
@@ -68,6 +39,10 @@ console.log(smoothie1("kale", "spinach"));
 console.log(smoothie1("honey", "pears", "berries"));
 // prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
 
+
+let smoothie2 = smoothieMachine("apples", "bananas", "berries");
+console.log(smoothie2("pineapple"));
+// prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = smoothieMachine;
