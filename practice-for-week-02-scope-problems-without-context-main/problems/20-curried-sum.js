@@ -59,13 +59,6 @@ function curriedSum(numArgs) {
   }
 
 }
-/*
-const sum = curriedSum(4); // returns a function
-sum(5) // returns a function
-sum(20) // returns a function
-sum(30) // returns a function
-console.log(sum(20)); // => returns 75
-*/
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
