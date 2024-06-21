@@ -25,21 +25,17 @@ Example 3:
 
 ***********************************************************************/
 function coinCollector(numCoins) {
-
-  let gatheredCoins = [];
   let count = 0;
+  let gatheredCoins = [];
 
-  return numCoins = function(coin) {
-    count++;
+  return coins = (coin) => {
+    count += 1;
     gatheredCoins.push(coin);
 
     if (count === numCoins) {
       return gatheredCoins;
-    } else {
-      return numCoins;
     }
-
-    }
+  }
 }
 
 let oneCoin = coinCollector(1); // returns a function
