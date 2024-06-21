@@ -23,10 +23,20 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-function smoothieMachine(...ingredients) {
+/*function smoothieMachine(...ingredients) {
   return function(...addIngredients) {
       let recipe = [...ingredients, ...addIngredients];
       return "I'm having a smoothie with " + recipe.join(' and ');
+  };
+};
+*/
+function smoothieMachine(...ingredients) {
+  return function(...addIngredients) {
+      let recipe = [...ingredients, ...addIngredients];
+      let recipeStr = recipe.join(' and ');
+
+      return `I'm having a smoothie with ${recipeStr}`;
+      //return "I'm having a smoothie with " + recipeStr;
   };
 };
 

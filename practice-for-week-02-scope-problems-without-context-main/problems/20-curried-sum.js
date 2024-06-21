@@ -43,8 +43,23 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  let numbers = [];
+  let count = 0;
+
+  return _curriedSum = (num) => {
+    count++;
+    numbers.push(num);
+
+    if (count === numArgs) {
+      return numbers.reduce((acc, num) => {
+        return acc + num;
+      });
+    }
+
+  }
+
 }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = curriedSum;
