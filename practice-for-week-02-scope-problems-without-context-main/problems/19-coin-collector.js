@@ -30,7 +30,7 @@ function coinCollector(numCoins) {
   let count = 0;
 
   return numCoins = function(coin) {
-    count++
+    count++;
     gatheredCoins.push(coin);
 
     if (count === numCoins) {
