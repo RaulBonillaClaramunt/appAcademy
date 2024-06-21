@@ -25,8 +25,38 @@ Example 3:
 
 ***********************************************************************/
 function coinCollector(numCoins) {
-  // Your code here
+
+  let gatheredCoins = [];
+  let count = 0;
+
+  return numCoins = function(coin) {
+    count++
+    gatheredCoins.push(coin);
+
+    if (count === numCoins) {
+      return gatheredCoins;
+    } else {
+      return numCoins;
+    }
+
+    }
 }
+
+let oneCoin = coinCollector(1); // returns a function
+  console.log(oneCoin(10)); // prints [10]
+
+console.log('----------------');
+
+let twoCoins = coinCollector(2); // returns a function
+twoCoins(25); // returns a function
+console.log(twoCoins(10)); // prints [25, 10]
+
+console.log('----------------');
+
+let threeCoins = coinCollector(3); // returns a function
+threeCoins(25); // returns a function
+threeCoins(5); // returns a function
+console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
