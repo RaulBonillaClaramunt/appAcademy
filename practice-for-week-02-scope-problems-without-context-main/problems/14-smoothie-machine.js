@@ -49,4 +49,3 @@ try {
 } catch (e) {
   return null;
 }
-git commit -m "exercise 14 solved with minimal code!
