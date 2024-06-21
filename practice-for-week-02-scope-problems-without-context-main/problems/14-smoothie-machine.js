@@ -22,12 +22,11 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
+
 function smoothieMachine(...ingredients) {
   return function(...addIngredients) {
       let recipe = [...ingredients, ...addIngredients];
       return "I'm having a smoothie with " + recipe.join(' and ');
-      //result += ;
-      //return result;
   };
 };
 
@@ -50,3 +49,4 @@ try {
 } catch (e) {
   return null;
 }
+git commit -m "exercise 14 solved with minimal code!
