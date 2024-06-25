@@ -14,14 +14,14 @@ countdown(5);
 //identify base case, recursive case, and recursive step
 let countdown2 = (startingNumber) => {
 
-    if (startingNumber === 0) {//base case
+    if (startingNumber === 0) {//base case - when the recursive function will stop
         console.log("Time's up!");
         return;
     }
 
     console.log(startingNumber);
-    countdown2(startingNumber - 1);//recursive step
-    //the recursive case is implicit
+    countdown2(startingNumber - 1);//recursive step is startingNumber - 1
+    //the recursive case is startingNumber > 0
 }
 
 countdown2(7);
