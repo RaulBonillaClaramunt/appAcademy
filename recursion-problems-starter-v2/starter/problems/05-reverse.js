@@ -12,7 +12,9 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+function reverse(string) {
+
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
