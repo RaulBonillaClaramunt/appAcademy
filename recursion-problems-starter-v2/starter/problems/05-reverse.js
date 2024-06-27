@@ -13,6 +13,42 @@ reverse(""); // ""
 ***********************************************************************/
 //get rid of the first char of string and call reverse back with the new shorter string
 //unshift the elimated characters into the newString
+
+function reverse(string) {
+  if (string === '') {
+    return '';
+  }
+
+  let stringArr = string.split('');
+
+  if (stringArr === 0) {
+    return stringArr.join('');
+  } else {
+    let char = stringArr.shift();
+
+    return reverse(stringArr.join('')) + char;
+  }
+
+
+}
+  /*
+
+function reverse(string) {//string = 'house'
+  //use slice method with the incoming string
+  let stringArr = string.split('');
+  let newString = [];
+    if (newString.length === stringArr.length) {
+      return newString.join('');
+    }
+
+    for (let i = 0; i < stringArr.length; i++) {
+      newString.unshift(stringArr[i]);
+    }
+
+    return newString.join('');
+  }
+
+
 function reverse(string) {
   // Base case: if the input string is empty, return an empty string
   if (string === "") {
@@ -31,22 +67,6 @@ function reverse(string) {
     let firstChar = stringArr.shift(); // Remove the first character
     return reverse(stringArr.join('')) + firstChar;
   }
-}
-
-/*
-function reverse(string) {//string = 'house'
-//use slice method with the incoming string
-let stringArr = string.split('');
-let newString = [];
-  if (newString.length === stringArr.length) {
-    return newString.join('');
-  }
-
-  for (let i = 0; i < stringArr.length; i++) {
-    newString.unshift(stringArr[i]);
-  }
-
-  return newString.join('');
 }
 */
 
