@@ -14,6 +14,12 @@ reverse(""); // ""
 
 function reverse(string) {//string = 'house'
 //use slice method with the incoming string
+let newString = '';
+    if (newString.length === string.length) {
+      return newString;
+    }
+
+
 
 }
 
