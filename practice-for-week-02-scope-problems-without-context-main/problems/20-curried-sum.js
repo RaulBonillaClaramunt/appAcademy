@@ -54,11 +54,22 @@ function curriedSum(numArgs) {
       return numbers.reduce((acc, num) => {
         return acc + num;
       });
+    } else {
+      return _curriedSum;
     }
 
   }
 
 }
+
+const sum = curriedSum(4); // returns a function
+sum(5) // returns a function
+sum(20) // returns a function
+console.log(sum(30)); // returns a function
+console.log(sum(20)); // => returns 75
+
+const sum2 = curriedSum(3)(2)(1)(7); // => returns 10
+console.log(sum2);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
