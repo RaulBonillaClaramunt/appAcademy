@@ -16,6 +16,7 @@ fibonacci(10); // 55
 ***********************************************************************/
 
 const fibonacci = (n) => {
+  debugger;
    if (n === 1 || n === 2) return 1;
    else {
     return fibonacci(n - 1) + fibonacci (n - 2);
@@ -24,7 +25,7 @@ const fibonacci = (n) => {
 }
 
 console.log(fibonacci(4)); // 3 => (1 + 2)
-console.log(fibonacci(10)); // 55
+//console.log(fibonacci(10)); // 55
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
