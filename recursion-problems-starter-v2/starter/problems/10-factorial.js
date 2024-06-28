@@ -20,6 +20,17 @@ function factorial(num, total = 1) {
   if (num === 1) return total;
 
   return factorial(num - 1, total * num);
+/*factorial (5, 1)
+    factorial (4, 5)
+      factorial (3, 20)
+        factorial (2, 60)
+          factorial (1, 120)
+          return 120
+        return 120
+      return 120
+    return 120
+  return 120
+*/
 }
 
 console.log(factorial(1)); // 1
