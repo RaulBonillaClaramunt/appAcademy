@@ -52,7 +52,7 @@ function deepDup(arr) {
   for (let i = 0; i < arr.length; i++) {
     duped[i] = deepDup(arr[i]);
   }
-  return duped
+  return duped;
 }
 
 let arr = [[1], [2, [3]]];
