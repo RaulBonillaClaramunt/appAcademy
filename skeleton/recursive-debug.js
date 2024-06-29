@@ -19,8 +19,8 @@ function doForAll(arr, action) {
 }
 
 console.log(doForAll([], (x) => x * 2)); // => []
-doForAll([1, 2, 3], (x) => x + 1); // => [2, 3, 4]
-doForAll(["a", "b", "c"]), (x) => x.toUpperCase(); // => ["A", "B", "C"]
+console.log(doForAll([1, 2, 3], (x) => x + 1)); // => [2, 3, 4]
+console.log(doForAll(["a", "b", "c"]), (x) => x.toUpperCase()); // => ["A", "B", "C"]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = doForAll;
