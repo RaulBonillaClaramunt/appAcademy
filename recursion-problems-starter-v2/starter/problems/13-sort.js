@@ -22,9 +22,29 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
-}
+  if (nums.length === 0) {//base case
+    return sorted;
+  }
 
+  let min = Math.min(...nums);//min contains minimum interger of array
+  let count = 0;
+  for (const num of nums) {//iterate through array
+    if (num === min) {
+      count++;//findout how many times an element is found in array
+    }
+  }
+  //return count;
+
+  for (let i = 0; i < count; i++) {
+    let index = nums.indexOf(min);//find index of min
+    sorted.push(nums[index]);
+    nums.splice(index, 1);//recursive step
+  }
+
+  return sort(nums, sorted);//recursive case
+}
+console.log(sort([4,1,6,3,1,7])); // [1, 1, 3, 4, 6, 7]
+console.log(sort([0, 1, -3])); // [-3, 0, 1]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sort;
