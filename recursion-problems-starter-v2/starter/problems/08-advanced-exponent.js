@@ -20,16 +20,11 @@ exponentiation in your solution.
 
 Examples:
 
-advancedExponent(2, 0); // 1
-advancedExponent(2, 1); // 2
-advancedExponent(2, 2); // 4
-advancedExponent(2, 3); // 8
-advancedExponent(2, 4); // 16
-advancedExponent(2, 5); // 32
-advancedExponent(2, 6); // 64
-advancedExponent(2, 7); // 128
-advancedExponent(2, 8); // 256
-advancedExponent(2, 9); // 512
+advancedExponent(2, 0); // 1   advancedExponent(2, 1); // 2
+advancedExponent(2, 2); // 4   advancedExponent(2, 3); // 8
+advancedExponent(2, 4); // 16  advancedExponent(2, 5); // 32
+advancedExponent(2, 6); // 64  advancedExponent(2, 7); // 128
+advancedExponent(2, 8); // 256 advancedExponent(2, 9); // 512
 advancedExponent(2, 10); // 1024
 advancedExponent(2, 11); // 2048
 advancedExponent(2, 12); // 4096
@@ -39,10 +34,25 @@ be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
-
 function advancedExponent(b, n) {
-  // your code here
+  if (n === 0) {
+    return 1;
+  }
+  else if (n === 1) {
+    return b;
+  } else if ((n > 1) && (n % 2 === 0)) {
+    return advancedExponent(b, n / 2) * advancedExponent(b, n / 2);  //exponent(b, n / 2) ** 2
+  } else if ((n > 1) && (n % 2 !== 0)) {
+    return b * advancedExponent(b, (n - 1) / 2) * advancedExponent(b, (n - 1) / 2); // b * (exponent(b, (n - 1) / 2) ** 2)
+  }
 }
+
+
+console.log(advancedExponent(2, 2)); // 4
+console.log(advancedExponent(2, 3)); // 8
+console.log(advancedExponent(2, 4)); // 16
+console.log(advancedExponent(2, 5));
+console.log(advancedExponent(2, 6)); // 64)
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
