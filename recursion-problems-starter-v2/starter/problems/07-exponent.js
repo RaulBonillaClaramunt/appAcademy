@@ -28,8 +28,8 @@ function exponent(b, n) {
 /*
 console.log(exponent(3, 2)); // 9
 console.log(exponent(2, 3)); // 8
-console.log(exponent(2, -2)); // 1/4 (or 0.25)
-console.log(exponent(2, -3)); // 1/4 (or 0.25)*/
+console.log(exponent(2, -2)); // 1/4 (or 0.25)*/
+console.log(exponent(2, -3)); // 1/8 (or 0.25)
 console.log(exponent(5, 5)); // 3125
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
