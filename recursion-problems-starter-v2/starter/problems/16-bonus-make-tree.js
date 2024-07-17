@@ -27,6 +27,58 @@ We should return a tree like this:
   }
 }
 
+***********************************************************************/
+const makeTree = (categories, parent) => {
+//we declare an empty object
+  let tree = {};
+  for (let i = 0; i < categories.length; i++) {
+    if (categories[i].parent === parent) {
+//in this case, categories[i].parent = null, which is === declared tree1 parent
+//so we pollute the empty object giving it the categories[0] parent value
+//as the key name and assigning it a value
+//which is the recursive calling of the function
+//setting the categories[0] id valur as the "parent" argument
+      tree[categories[i].id] = makeTree(categories, categories[i].id);
+    }
+  }
+
+  return tree;
+};
+
+/*
+const makeTree = (categories, parent) => {
+  let tree = {};
+  //this exercise is going to take me a while to solve ;))
+  for (let i = 0; i < categories.length; i++) {
+    const category = categories[i];
+    if (category.parent === parent) {
+      tree[category.id] = makeTree(categories, category.id);
+    }
+  }
+
+  return tree;
+};
+*/
+const categories1 = [
+  { id: 'animals', 'parent': null },
+  { id: 'mammals', 'parent': 'animals' }
+];
+
+const tree1 = makeTree(categories1, null);
+console.log(tree1);
+
+
+
+/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
+try {
+  module.exports = makeTree;
+} catch (e) {
+  module.exports = null;
+}
+
+// This problem was inspired by a Fun Fun Function video:
+// https://www.youtube.com/watch?v=k7-N8R0-KY4
+/*
 Example 2:
 Now imagine we have a database that returns a bunch of rows of data:
 
@@ -60,19 +112,4 @@ The call above should return the tree below:
         }
     }
 }
-
-***********************************************************************/
-
-const makeTree = (categories, parent) => {
-  //this exercise is going to take me a while to solve ;))
-};
-
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = makeTree;
-} catch (e) {
-  module.exports = null;
-}
-
-// This problem was inspired by a Fun Fun Function video:
-// https://www.youtube.com/watch?v=k7-N8R0-KY4
+*/
