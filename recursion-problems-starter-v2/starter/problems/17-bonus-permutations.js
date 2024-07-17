@@ -11,8 +11,35 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
                         // [2, 1, 3], [2, 3, 1],
                         // [3, 1, 2], [3, 2, 1]]
 ***********************************************************************/
+function permutations(array) {
+  const result = [];
 
-// your code here
+  if (array.length === 1) {
+    result.push(array);
+    return result;
+  }
+
+  for (let i = 0; i < array.length; i++) {
+    const current = array[i];//pick up an element of array
+    //build an array with the remaining values
+    const remaining = [...array.slice(0, i), ...array.slice(i + 1)];
+    //pass those values through the function again
+    const innerPermutations = permutations(remaining);
+
+    for (let j = 0; j < innerPermutations.length; j++) {
+      //push the result of recursion to the result array
+      result.push([current, ...innerPermutations[j]]);
+    }
+  }
+
+  return result;
+}
+
+//console.log(permutations([]));
+//console.log(permutations([5]));
+//console.log(permutations([1, 2]));
+console.log(permutations([1, 2, 3]));
+//permutations([1, 2, 3]);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
