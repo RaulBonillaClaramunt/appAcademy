@@ -33,21 +33,35 @@ console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 ***********************************************************************/
 
 function batchTimeouts(callbacks, delays) {
-    let result = [];
+  let result = [];
 
-    for (let i = 0; i < callbacks.length; i++) {
-      setTimeout(() => {
-        callbacks[i]();
-      }, delays[i]);
-      const resultObject = {};
-      const key = callbacks[i]();
-      const value = delays[i];
-      resultObject.key = value;
-      result.push(resultObject);
-    }
-
-    return result;
+  for (let i = 0; i < callbacks.length; i++) {
+    const setTimeObj = setTimeout(() => {
+      callbacks[i]();
+    }, delays[i]);
+    result.push(setTimeObj);
   }
+
+  return result;
+}
+/*
+function batchTimeouts(callbacks, delays) {
+  let result = [];
+
+  for (let i = 0; i < callbacks.length; i++) {
+    const setTimeObj = setTimeout(() => {
+      callbacks[i]();
+    }, delays[i]);
+    const resultObject = {};
+    const keyName = callbacks[i].name;
+    const value = delays[i];
+    resultObject[keyName] = value;
+    result.push(resultObject);
+  }
+
+  return result;
+}
+*/
 
   const sayHello = () => console.log('hi');
   const sayGoodbye = () => console.log('bye');

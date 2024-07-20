@@ -52,7 +52,7 @@ permutations without storing them in an array. Then go back and refactor your
 solution so that it only calculates and compares all of the different
 combinations.
 ***********************************************************************/
-
+/*
 function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
   let remainder = target;
   let result = [];
@@ -73,16 +73,43 @@ function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
 
   return result;
 }
-
+//we still would need to set a function that rearranges coins
+//so it always goes from biggest to smallest coin
 console.log(greedyMakeChange(21)); // [1, 10, 10]
 console.log(greedyMakeChange(75)); // [25, 25, 25]
 console.log(greedyMakeChange(33, [15, 3])); // [3, 15, 15]
+console.log(greedyMakeChange(33, [3, 15])); // [3, 15, 15]
 console.log(greedyMakeChange(34, [15, 3])); // null
 console.log(greedyMakeChange(24, [10, 7, 1])) // [7, 7, 10]
-
+*/
 function makeBetterChange(target, coins = [25, 10, 5, 1]) {
-  // your code here
-}
+  if (target < 0) return null;
+  if (target === 0) return [];
+
+  let bestSolution = null;
+
+  for (let i = 0; i < coins.length; i++) {
+      const remainder = target - coins[i];
+      const result = makeBetterChange(remainder, coins.slice[i]);
+
+      if (result !== null) {
+        const resultArray = [...result, coins[i]];
+        if (bestSolution === null || resultArray.length < bestSolution.length) {
+          bestSolution = resultArray;
+        }
+      }
+    }
+
+    return bestSolution;
+};
+
+
+console.log(makeBetterChange(21)); // [1, 10, 10]
+console.log(makeBetterChange(75)); // [25, 25, 25]
+console.log(makeBetterChange(33, [15, 3])); // [3, 15, 15]
+console.log(makeBetterChange(33, [3, 15])); // [3, 15, 15]
+console.log(makeBetterChange(34, [15, 3])); // null
+console.log(makeBetterChange(24, [10, 7, 1])) // [7, 7, 10]
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
