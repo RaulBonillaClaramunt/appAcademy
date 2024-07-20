@@ -15,10 +15,21 @@ intervalCount(function() {
     console.log('hi');
 }, 500, 3); // prints 'hi' at 500ms intervals a total of 3 times
 ***********************************************************************/
-
 function intervalCount(cb, delay, amount) {
-    // Your code here
-  }
+  //we need to assign the setInterval to a variable to be able to call clearInterval
+  const intervalObj = setInterval(() => {
+    cb();
+    amount--;
+    if (amount === 0) {
+      clearInterval(intervalObj);
+    }
+  }, delay);
+
+}
+
+  intervalCount(function() {
+    console.log('hi');
+}, 500, 3); // prints 'hi' at 500ms intervals a total of 3 times
 
   /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
   try {

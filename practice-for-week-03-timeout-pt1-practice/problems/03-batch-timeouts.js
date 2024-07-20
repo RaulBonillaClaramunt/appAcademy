@@ -33,8 +33,49 @@ console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 ***********************************************************************/
 
 function batchTimeouts(callbacks, delays) {
-    // Your code here
+  let result = [];
+
+  for (let i = 0; i < callbacks.length; i++) {
+    const setTimeObj = setTimeout(() => {
+      callbacks[i]();
+    }, delays[i]);
+    result.push(setTimeObj);
   }
+
+  return result;
+}
+/*
+function batchTimeouts(callbacks, delays) {
+  let result = [];
+
+  for (let i = 0; i < callbacks.length; i++) {
+    const setTimeObj = setTimeout(() => {
+      callbacks[i]();
+    }, delays[i]);
+    const resultObject = {};
+    const keyName = callbacks[i].name;
+    const value = delays[i];
+    resultObject[keyName] = value;
+    result.push(resultObject);
+  }
+
+  return result;
+}
+*/
+
+  const sayHello = () => console.log('hi');
+  const sayGoodbye = () => console.log('bye');
+  const shout = () => console.log('WHAT?');
+  const tasks = [sayHello, sayGoodbye, shout];
+  const delays = [500, 200, 900];
+
+  const timeoutObjs = batchTimeouts(tasks, delays);
+  // should print:
+  //  'bye' after 200 ms
+  //  'hi' after 500 ms
+  //  'WHAT?' after 900 ms
+
+  console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 
   /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
   try {
