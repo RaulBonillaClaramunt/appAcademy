@@ -3,24 +3,59 @@ const { stdin: input, stdout: output } = require('node:process');
 
 const rl = readline.createInterface({ input, output });
 
-const askGuess = (answer) => {
+let min;
+let max;
+let secretNumber;
+let numAttempts;
 
+const askLimit = () => {
+    rl.question("How many attempts do you want to have? ", (attempts) => {
+        console.log(`You will have ${attempts} attempts`);
+        numAttempts = Number(attempts);
+        askRange();
+    });
+}
+
+const askRange = () => {
+    rl.question("Enter a min number ", (minNumber) => {
+        console.log("*", (minNumber), "*");
+        min = Number(minNumber);
+
+        rl.question("Enter a max number ", (maxNumber) => {
+            console.log("*", (maxNumber), "*");
+            max = Number(maxNumber);
+            secretNumber = randomInRange(min, max)
+            console.log(`I'm thinking of a number between ${min} and ${max}`);
+
+            askGuess();
+        });
+    });
+};
+
+
+const askGuess = () => {
+    if (numAttempts <= 0) {
+        console.log("Too many attempts...You Lose!");
+        rl.close();
+        return;
+    }
+
+    rl.question("Enter a guess: ", (answer) => {
         let number = Number(answer);
         console.log("Your guess is: ", number);
-        //checkGuess(number);
+        numAttempts -= 1;
+
         if (!checkGuess(number)) {
-            rl.question("Enter another guess: ", (answer) => {
-            askGuess(answer);
-            });
+            askGuess();
         } else {
             rl.close();
         }
-}
-function randomInRange(max, min) {
-    return Math.floor(Math.random() * (max - min) + min);
+    });
 }
 
-let secretNumber = randomInRange(100, 0);
+function randomInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function checkGuess(number) {
     if (number > secretNumber){
@@ -39,10 +74,4 @@ function checkGuess(number) {
     }
 }
 
-rl.question("Enter a guess: ", (answer) => {
-    askGuess(answer);
-    });
-
-console.log(randomInRange(15, 20)); // 16
-console.log(randomInRange(15, 20)); // 17
-console.log(randomInRange(15, 20)); // 20
+askLimit();
