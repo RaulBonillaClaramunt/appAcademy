@@ -1,0 +1,47 @@
+const Person = require('./person');
+
+class Student extends Person {
+  constructor(firstName, lastName, major, GPA) {
+    super(firstName, lastName);
+    this.major = major;
+    this.GPA = GPA;
+  }
+
+  static compareGPA(student1, student2) {
+    if (student1.GPA > student2.GPA) {
+      return `${student1.firstName} ${student1.lastName} has the higher GPA.`;
+    } else if (student2.GPA > student1.GPA) {
+      return `${student2.firstName} ${student2.lastName} has the higher GPA.`;
+    } else {
+      return "Both students have the same GPA";
+    }
+  }
+
+  introduce() {
+    return `Hello. I am ${this.firstName} ${this.lastName}, and I study ${this.major}.`;
+  }
+
+  static introduceStudent(students) {
+    if (!Array.isArray(students)) {
+      throw new Error("introduceStudent only takes an array as an argument.");
+    }
+
+    for (let student of students) {
+      if (!(student instanceof Person)) {
+        throw new Error("All items in array must be Person class instances.");
+      }
+    }
+
+    return students.forEach((student) => student.introduce());
+  }
+}
+
+
+/****************************************************************************/
+/******************* DO NOT EDIT CODE BELOW THIS LINE ***********************/
+
+try {
+  module.exports = Student;
+} catch {
+  module.exports = null;
+}
