@@ -19,7 +19,7 @@ class EvilDragon extends Dragon {
 };
 
 module.exports = EvilDragon;
-
+/*
 const enderDragon = new EvilDragon(
     "Ender Dragon",
     "black", [
@@ -33,3 +33,4 @@ const enderDragon = new EvilDragon(
   enderDragon.dontInviteThemOverForDinner();
   console.log(enderDragon.breathesFire());
   console.log(enderDragon.burnsNemesis());
+  */

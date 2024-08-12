@@ -21,6 +21,7 @@ class Dragon {
     return dragons;
   };
 };
+
 /*
 const puff = new Dragon("Puff", "green");
 console.log(puff);
