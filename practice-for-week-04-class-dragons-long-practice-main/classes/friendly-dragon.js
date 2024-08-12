@@ -19,7 +19,7 @@ class FriendlyDragon extends Dragon {
 };
 
 module.exports = FriendlyDragon;
-
+/*
 const puff = new FriendlyDragon(
     "Puff",
     "green",
@@ -34,3 +34,4 @@ const puff = new FriendlyDragon(
   console.log(puff.breathesFire()); //Friendly dragons can still breathe fire!
   puff.hasLifeGoals();
   console.log(puff.helpsPeople());
+  */

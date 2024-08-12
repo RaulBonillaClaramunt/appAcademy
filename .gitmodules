@@ -1,3 +1,31 @@
 [submodule "practice-for-week-03-timeout-pt2-practice"]
 	path = practice-for-week-03-timeout-pt2-practice
 	url = https://github.com/appacademy/practice-for-week-03-timeout-pt2-practice.git
+
+[submodule "practice-for-week-04-DRY"]
+    path = practice-for-week-04-DRY
+    url = https://github.com/appacademy/practice-for-week-04-DRY.git
+
+[submodule "practice-for-week-04-class-practice"]
+    path = practice-for-week-04-class-practice
+    url = https://github.com/appacademy/practice-for-week-04-class-practice.git
+
+[submodule "practice-for-week-04-reading-tests-exercise"]
+path = practice-for-week-04-reading-tests-exercise
+url = https://github.com/appacademy/practice-for-week-04-reading-tests-exercise.git
+
+[submodule "practice-for-week-04-common-js-modules"]
+path = practice-for-week-04-common-js-modules
+url = https://github.com/appacademy/practice-for-week-04-common-js-modules.git
+
+[submodule "practice-for-week-04-rock-paper-scissors-long-practice"]
+path = practice-for-week-04-rock-paper-scissors-long-practice
+url = https://github.com/appacademy/practice-for-week-04-rock-paper-scissors-long-practice.git
+
+[submodule "practice-for-week-04-single-responsibility-principle"]
+path = practice-for-week-04-single-responsibility-principle
+url = https://github.com/appacademy/practice-for-week-04-single-responsibility-principle.git
+
+[submodule "try-out-callbacks-starter/problems"]
+path = try-out-callbacks-starter/problems
+url = https://github.com/appacademy/try-out-callbacks-starter/problems.git
