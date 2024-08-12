@@ -1,3 +1,7 @@
 [submodule "practice-for-week-03-timeout-pt2-practice"]
 	path = practice-for-week-03-timeout-pt2-practice
 	url = https://github.com/appacademy/practice-for-week-03-timeout-pt2-practice.git
+
+[submodule "practice-for-week-04-DRY"]
+    path = practice-for-week-04-DRY
+    url = https://github.com/appacademy/practice-for-week-04-DRY.git
