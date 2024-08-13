@@ -1,3 +1,5 @@
+const { Item } = require('./item');
+
 class Player {
 
     constructor(name, startingRoom) {
@@ -30,26 +32,41 @@ class Player {
             }
         }
     }
-
+    //gets an item from a room and adds it to player's inventory
     takeItem(itemName) {
+        //gets it
+        const item = this.currentRoom.getItemByName(itemName);
+        this.items.push(item);
 
-        // Fill this in
+        //deletes it from room inventory by creating a new array
+        //with the rest of items (using filter method properties)
+        this.currentRoom.items = this.currentRoom.items.filter((item) => item.name != itemName);
+
 
     }
 
     dropItem(itemName) {
+        //add item to currentRoom item array
+        const item = this.getItemByName(itemName);
+        this.currentRoom.items.push(item);
 
-        // Fill this in
+        //delete item from player's inventory
+        this.items = this.items.filter((item) => item.name !== itemName);
     }
 
     eatItem(itemName) {
-        // Fill this in
+        const item = this.getItemByName(itemName);
 
+        if (item instanceof Food) {
+            this.items = this.items.filter((item) => item.name !== itemName);
+        }
     }
 
     getItemByName(name) {
-
-        // Fill this in
+        //get a new array (due to filter's behaviour) with items with certain name
+        //return first (and only) item with that name
+        const itemArray = this.items.filter((item) => item.name === name);
+        return itemArray[0];
     }
 }
 
