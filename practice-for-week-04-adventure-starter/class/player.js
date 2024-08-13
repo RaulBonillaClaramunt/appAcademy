@@ -1,4 +1,5 @@
 const { Item } = require('./item');
+const { Food } = require('./food');
 
 class Player {
 
@@ -59,7 +60,9 @@ class Player {
 
         if (item instanceof Food) {
             this.items = this.items.filter((item) => item.name !== itemName);
-        }
+        } else {
+            return "You can only eat food ;)";
+          };
     }
 
     getItemByName(name) {
