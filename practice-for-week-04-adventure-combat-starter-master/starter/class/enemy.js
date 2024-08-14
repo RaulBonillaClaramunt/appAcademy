@@ -6,6 +6,7 @@ const {Character} = require('./character');
 class Enemy extends Character {
   constructor(name, description, currentRoom) {
     super(name, description, currentRoom);
+    this.cooldown = 3000;
   }
 
   setPlayer(player) {
@@ -65,7 +66,7 @@ class Enemy extends Character {
 
 
   scratchNose() {
-    this.cooldown += 1000;
+    this.cooldown += 3000;
 
     this.alert(`${this.name} scratches its nose`);
 
