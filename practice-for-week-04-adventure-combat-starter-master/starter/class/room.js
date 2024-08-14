@@ -53,13 +53,15 @@ class Room {
 
   getItemByName(name) {
 
-    // Fill this in
+    const itemArray = this.items.filter((item) => item.name === name);
+    return itemArray[0];
 
   }
 
   getEnemyByName(name) {
 
-    // Fill this in
+
+  }
 
 }
 

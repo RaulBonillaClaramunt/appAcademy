@@ -1,11 +1,13 @@
 const {Character} = require('./character');
 const {Enemy} = require('./enemy');
 const {Food} = require('./food');
+//const {Room} = require('./room');
 
 class Player extends Character {
 
   constructor(name, startingRoom) {
     super(name, "main character", startingRoom);
+    this.items = [];
   }
 
   move(direction) {
@@ -33,28 +35,39 @@ class Player extends Character {
     }
   }
 
-  takeItem(itemName) {
+  takeItem(itemName) {//it is not working
 
-    // Fill this in
-
+    const item = this.currentRoom.items.find((item) => item.name === itemName);
+    this.items.push(item);
+    this.currentRoom.items = this.currentRoom.items.filter((item) => item.name !== itemName);
   }
 
-  dropItem(itemName) {
+  dropItem(itemName) {//it is not working
 
-    // Fill this in
-
+    const item = this.getItemByName(itemName);
+    this.items = this.items.filter((item) => item.name !== itemName);
+    this.currentRoom.items.push(item);
   }
 
   eatItem(itemName) {
 
-    // Fill this in
+    const item = this.getItemByName(itemName);
+    if (item instanceof Food) {
+      this.items = this.items.filter((item) => item.name !== itemName);
+    } else {
+      return ('You can only eat food ;)');
+    }
 
   }
 
   getItemByName(name) {
-
-    // Fill this in
-
+//    const item = this.items.find((item) => item.name === name);
+//    return item;
+    for (const item of this.items) {
+      if (item.name === name) {
+        return item;
+      }
+    }
   }
 
   hit(name) {

@@ -1,9 +1,11 @@
 const {Character} = require('./character');
+//const {Player} = require('./player');
+//const {Food} = require('./food');
 
 
 class Enemy extends Character {
   constructor(name, description, currentRoom) {
-    // Fill this in
+    super(name, description, currentRoom);
   }
 
   setPlayer(player) {
@@ -28,7 +30,10 @@ class Enemy extends Character {
 
   rest() {
     // Wait until cooldown expires, then act
-    const resetCooldown = function() {
+    const resetCooldown = () => {
+  //debugged: originally it was a regular function but RFs this context is
+  //limited to the function they're declared into (in this case resetCooldown)
+  //and not in surrounding scope (in this case rest()), which would make our code useless
       this.cooldown = 0;
       this.act();
     };
