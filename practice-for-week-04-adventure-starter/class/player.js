@@ -42,8 +42,6 @@ class Player {
         //deletes it from room inventory by creating a new array
         //with the rest of items (using filter method properties)
         this.currentRoom.items = this.currentRoom.items.filter((item) => item.name != itemName);
-
-
     }
 
     dropItem(itemName) {
