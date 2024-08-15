@@ -15,7 +15,19 @@ class Enemy extends Character {
 
 
   randomMove() {
-    // Fill this in
+  //need to find rooms connected to currentRoom
+  //if
+
+    if (this.cooldown > 0) {
+      this.rest();
+    }
+
+    //get a random number for room and place Goblin there
+    const num = Math.floor((Math.random() * 7) + 1);//rndm num between 1 and 7
+
+    //need to define variabel room
+    this.currentRoom = room;
+    this.cooldown = 3000;
   }
 
   takeSandwich() {
@@ -53,7 +65,7 @@ class Enemy extends Character {
 
   act() {
     if (this.health <= 0) {
-      // Dead, do nothing;
+      this.die();
     } else if (this.cooldown > 0) {
       this.rest();
     } else {
