@@ -21,10 +21,14 @@ class Enemy extends Character {
     if (this.cooldown > 0) {
       this.rest();
     }
-
+    //get exits from the current room
+    const exits = this.currentRoom.getExits();//this returns an array of available exits
+    const numOfExits = exits.length;
     //get a random number for room and place Goblin there
-    const num = Math.floor((Math.random() * 7) + 1);//rndm num between 1 and 7
-
+    const num = Math.floor(Math.random() * numOfExits);//rndm num between 0 and numOfExits
+    //new var
+    const dir = exits[num];
+    const room = this.currentRoom.getRoomInDirection(dir);
     //need to define variabel room
     this.currentRoom = room;
     this.cooldown = 3000;
@@ -54,11 +58,21 @@ class Enemy extends Character {
   }
 
   attack() {
-    // Fill this in
+    if (this.cooldown > 0) {
+      this.rest();
+    }
+//if player is in the same room he will attack by default
+//so Enemy can attack right afterwards using a Timeset
+    if (this.currentRoom.player) {
+      setTimeout(() => {
+        player.applyDamage(this.strength);
+      }, 500);
+    }
+
   }
 
   applyDamage(amount) {
-    // Fill this in
+    player.health -= amount;
   }
 
 
