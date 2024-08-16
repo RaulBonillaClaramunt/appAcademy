@@ -35,14 +35,14 @@ class Player extends Character {
     }
   }
 
-  takeItem(itemName) {//it is not working
+  takeItem(itemName) {
 
     const item = this.currentRoom.items.find((item) => item.name === itemName);
     this.items.push(item);
     this.currentRoom.items = this.currentRoom.items.filter((item) => item.name !== itemName);
   }
 
-  dropItem(itemName) {//it is not working
+  dropItem(itemName) {
 
     const item = this.getItemByName(itemName);
     this.items = this.items.filter((item) => item.name !== itemName);
@@ -70,9 +70,15 @@ class Player extends Character {
     }
   }
 
-  hit(name) {
+  hit(enemyName) {
 
-    // Fill this in
+    const enemy = this.currentRoom.getEnemyByName(enemyName);
+    //enemy.applyDamage(this.strength);
+    enemy.health -= this.strength;
+
+    //tips form another student's code:
+    //enemy.attackTarget = this;
+    //enemy.health -= this.strength;
 
   }
 

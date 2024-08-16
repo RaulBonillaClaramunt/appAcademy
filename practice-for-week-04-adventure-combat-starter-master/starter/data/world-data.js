@@ -74,5 +74,10 @@ module.exports = {
       //create a random number to replace room number so
       //goblin is able to move to a different room on a cooldown timer
     },
+    {
+      name: "troll",
+      description: "A nasty troll",
+      room: 6,
+    },
   ]
 }
