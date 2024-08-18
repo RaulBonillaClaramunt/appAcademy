@@ -93,7 +93,14 @@ function makeBetterChange(target, coins = [25, 10, 5, 1]) {
       const result = makeBetterChange(remainder, coins.slice[i]);
 
       if (result !== null) {
-        const resultArray = [...result, coins[i]];
+          // Create a new array and add elements from result
+        let resultArray = [];
+        for (let j = 0; j < result.length; j++) {
+        resultArray.push(result[j]);
+        }
+        resultArray.push(coins[i]); // Add the current coin
+        //Alternative and more concise code:
+        //const resultArray = [...result, coins[i]];
         if (bestSolution === null || resultArray.length < bestSolution.length) {
           bestSolution = resultArray;
         }

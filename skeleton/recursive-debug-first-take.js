@@ -12,19 +12,17 @@ doForAll([], (x) => x * 2); // => []
 doForAll([1, 2, 3], (x) => x + 1); // => [2, 3, 4]
 doForAll(["a", "b", "c"]), (x) => x.toUpperCase()); // => ["A", "B", "C"]
 ***********************************************************************/
-
 function doForAll(arr, action) {
-
   if (arr.length === 0) {
     return [];
   }
-
-  return [action(arr[0]), ...doForAll(arr.slice(1), action)];
+   return [action(arr[0]),...doForAll(arr.slice(1), action)];
 }
 
-doForAll([], (x) => x * 2); // => []
-doForAll([1, 2, 3], (x) => x + 1); // => [2, 3, 4]
-doForAll((["a", "b", "c"]), (x) => x.toUpperCase()); // => ["A", "B", "C"]
+console.log(doForAll([], (x) => x * 2)); // => []
+console.log(doForAll([1, 2, 3], (x) => x + 1)); // => [2, 3, 4]
+//console.log(doForAll([1, 2, 3, 4, 5, 6], (x) => x * 2)); // => [2, 3, 4]
+console.log(doForAll(["a", "b", "c"]), (x) => x.toUpperCase()); // => ["A", "B", "C"]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = doForAll;
