@@ -1,0 +1,62 @@
+fieldset {
+    margin: 40% 33%;
+    width: 33%
+    position: relative;
+    background-color: aquamarine;
+}
+
+legend {
+    border: solid 1px;
+    background-color: salmon;
+    margin-left: 15%;
+    width: 15%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+div {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#status-date {
+    display: flex;
+    justify-content: center;
+}
+
+#role {
+margin-right: 5px;
+}
+
+
+p {
+    font-size: x-small;
+    margin-bottom: 0;
+}
+#favLang {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#css, #javascript {
+    margin-top: 0px;
+    margin-right: 3px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+#signup-terms {
+    font-size: x-small;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    content-visibility: ;
+}
+
+#signup {
+    text-size-adjust: 10px;
+}

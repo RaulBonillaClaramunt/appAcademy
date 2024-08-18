@@ -19,7 +19,7 @@ function stringConverter(string) {
   let counter = {};
 
   char.forEach((el) => {
-    counter[el] = counter[el] ? counter[el]++ : 1;
+    counter[el] = counter[el] ? counter[el] +=1 : 1;
   })
   return counter;
 }

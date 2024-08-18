@@ -25,9 +25,9 @@ const obj = { key1: "a", key2: "b", key3: "c" };
 ***********************************************************************/
 
 //iterate through array objArray
-//check if indexed el i === keystring
-//declare a counter that adds 1 each time el[i] === keystring
-//return true if it does
+//check if indexed element i === keystring
+//declare a counter that adds 1 each time element[i] === keystring
+//return true if counter > 0
 
 let objArray = [
   { name: "Rupert" },
