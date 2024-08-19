@@ -7,6 +7,7 @@ class Enemy extends Character {
   constructor(name, description, currentRoom) {
     super(name, description, currentRoom);
     this.cooldown = 3000;
+    this.attackTarget = null;
   }
 
   setPlayer(player) {
@@ -61,13 +62,17 @@ class Enemy extends Character {
     if (this.cooldown > 0) {
       this.rest();
     }
+
+    this.attackTarget.health -= this.strength;
+    this.cooldown = 3000;
+/* original code not passing test:
 //if player is in the same room he will attack by default
 //so Enemy can attack right afterwards using a Timeset
     if (this.currentRoom.player) {
       setTimeout(() => {
         player.applyDamage(this.strength);
       }, 500);
-    }
+    }*/
 
   }
 

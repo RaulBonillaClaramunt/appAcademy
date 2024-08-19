@@ -70,12 +70,14 @@ class Player extends Character {
     }
   }
 
-  hit(enemyName) {
+  hit(name) {
 
-    const enemy = this.currentRoom.getEnemyByName(enemyName);
+    const enemy = this.currentRoom.getEnemyByName(name);
     //enemy.applyDamage(this.strength);
-    enemy.health -= this.strength;
-
+    if(enemy) {
+      enemy.attackTarget = this;
+      enemy.health -= this.strength;
+    }
     //tips form another student's code:
     //enemy.attackTarget = this;
     //enemy.health -= this.strength;
