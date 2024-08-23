@@ -4,20 +4,23 @@ class Calculator {
 	}
 
 	add(num) {
-
-		this.total = num;
+		this.total += num;
+		return this.total;
 	}
 
 	subtract(num) {
 		this.total -= num;
+		return this.total;
 	}
 
 	divide(num) {
 		this.total = this.total/num;
+		return this.total;
 	}
 
 	multiply(num) {
 		this.total = this.total*num;
+		return this.total;
 	}
 
 }
