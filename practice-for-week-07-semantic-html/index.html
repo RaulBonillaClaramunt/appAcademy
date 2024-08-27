@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>My HTML Cheat Sheet</title>
+        <link rel="icon" href="https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-07/sample-icon.png"/>
+        <style>
+            body {
+            /* Center the form on the page */
+                text-align: left;
+            }
+
+            form {
+              display: inline-block;
+              /* Form outline */
+              padding: 1em;
+              border: 1px solid #ccc;
+              border-radius: 1em;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            form li + li {
+              margin-top: 1em;
+            }
+
+            label {
+              /* Uniform size & alignment */
+              display: inline-block;
+              min-width: 90px;
+              text-align: right;
+            }
+
+            input,
+            textarea {
+              /* To make sure that all text fields have the same font settings
+                By default, textareas have a monospace font */
+              font: 1em sans-serif;
+              /* Uniform text field size */
+              width: 300px;
+              box-sizing: border-box;
+              /* Match form field borders */
+              border: 1px solid #999;
+            }
+
+            input:focus,
+            textarea:focus {
+              /* Additional highlight for focused elements */
+              border-color: #000;
+            }
+
+            textarea {
+              /* Align multiline text fields with their labels */
+              vertical-align: top;
+              /* Provide space to type some text */
+              height: 5em;
+            }
+
+            .button {
+              /* Align buttons with the text fields */
+              padding-left: 90px; /* same size as the label elements */
+            }
+
+            button {
+              /* This extra margin represent roughly the same space as the space
+                between the labels and their text fields */
+              margin-left: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My HTML Cheat Sheet</h1>
+
+        <p>
+          <label for="search"><span>Enter a search term: </span></label>
+          <input type="search" id="search" name="search" />
+        </p>
+
+        <h2>Headings</h2>
+        <p>
+            Headings from `h1` to `h6` identify blocks and sections. Every page must have one `h1` - Google will penalize your ranking if not
+        </p>
+
+        <h2>Paragraphs</h2>
+        <p>
+            Paragraphs of text go in `p` tags.
+        </p>
+
+        <h2>Lists</h2>
+        <h3>Unordered Lists</h3>
+        <p>
+            Unordered lists are marked with bullet points and go in `ul` tags. Each list item goes in a `li` tag.
+        </p>
+        <h4>Types of lists:</h4>
+            <ul>
+                <li>Unordered lists (`ul`)</li>
+                <li>Ordered lists (`ol`)</li>
+            </ul>
+
+        <h3>Ordered Lists</h3>
+        <p>
+            Ordered lists are numbered and go in `ol` tags. Each list item goes in a `li` tag.
+        </p>
+        <h4>Polya's Problem Solving Framework</h4>
+            <ol>
+                <li>Understand the problem</li>
+                <li>Come up with a plan</li>
+                <li>Carry out the plan</li>
+                <li>Go back and improve your solution</li>
+            </ol>
+
+        <h2>Anchors (i.e. links)</h2>
+        <p>
+            Anchor tags create links to other pages. The URL goes in the `href` attribute.
+            <a href="https://duckduckgo.com">
+                Go to DuckDuckGo to search for more information.
+            </a>
+        </p>
+        <p>
+            Setting `target="blank"` will open the link in a new window. See
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank">
+                MDN
+            </a>
+            for more details.
+        </p>
+
+        <h2>Images</h2>
+        <p>
+            You can use the image tag to add images to your page.
+        </p>
+        <p>
+            <img src="http://images.freeimages.com/images/premium/large-thumbs/2582/25827620-itty-bitty-kitty.jpg" alt="Kitty">
+            <img src="https://www.babyanimalzoo.com/wp-content/uploads/2011/10/cute-baby-hippo-tortoise-friends-pic-150x150.jpg" alt="Cute Hippo">
+            <img src="http://wanderlord.com/wp-content/uploads/2015/11/Lemur-5-150x150.jpg" alt="A cute lemur">
+
+        </p>
+
+        <h2>Tables</h2>
+        <table>
+            <p>
+                This is a simple example for a table.
+                It displays columns and rows with information but no fancy grid or format.
+            </p>
+            <thead>
+                <tr>
+                    <th scope="col">Insect</th>
+                    <th scope="col">Family</th>
+                    <th scope="col">Fact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Ladybug</th>
+                    <td>Coccinellidae</td>
+                    <td>Can eat more than 5,000 insects!</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fruit flies</th>
+                    <td>Drosophilidae</td>
+                    <td>First living creatures in the outer space!</td>
+                </tr>
+                <tr>
+                    <th scope="row">Caterpillars</th>
+                    <td>Heterobathmiidae</td>
+                    <td>Have 12 eyes!</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>I had no ideas!</td>
+                    <td>Those are neat!</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>Dropdown Menus</h2>
+        <fieldset>
+          <legend>Ther's 2 kinds of Dropdown Menus</legend>
+          <fieldset>
+            <legend><h3>Select box</h3></legend>
+            <select id="simple" name="simple">
+              <option>this is</option>
+              <option selected>the simplest</option>
+              <option>dropdown Menu</option>
+              <option>available ;&#41;</option>
+            </select>
+            <select id="groups" name="groups">
+              <optgroup label="There is also">
+                <option>this kind of</option>
+                <option selected value="which gives you a lot of freedom">multiple choice</option>
+                <option>dropdown menu</option>
+              </optgroup>
+              <optgroup label="Particularly useful">
+                <option>when you need</option>
+                <option>to gather</option>
+                <option>options in groups</option>
+              </optgroup>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend><h3>Autocomplete</h3></legend>
+            <label for="autocompleteMenu">This menu will</label>
+            <input type="text" id="autocompleteMenu" name="autocompleteMenu" list="mySuggestion" />
+            <datalist id="mySuggestion">
+              <option>autocomplete</option>
+              <option>itself</option>
+              <option>in a beautiful</option>
+              <option>manner</option>
+            </datalist>
+          </fieldset>
+        </fieldset>
+
+        <h2>Progress bar</h2>
+        <fieldset>
+          <legend>Mesure how close you are to going to Japan :&#41;</legend>
+          <progress max="100" value="25">25%</progress>
+        </fieldset>
+
+        <h2>Client-side Form Validation</h2>
+        <form>
+          <fieldset>
+            <legend>
+              Do you have a driver's license?<span aria-label="required">*</span>
+            </legend>
+            <!-- While only one radio button in a same-named group can be selected at a time,
+                 and therefore only one radio button in a same-named group having the "required"
+                 attribute suffices in making a selection a requirement -->
+            <input type="radio" required name="driver" id="r1" value="yes" /><label
+              for="r1"
+              >Yes</label
+            >
+            <input type="radio" required name="driver" id="r2" value="no" /><label
+              for="r2"
+              >No</label
+            >
+          </fieldset>
+          <p>
+            <label for="n1">How old are you?</label>
+            <!-- The pattern attribute can act as a fallback for browsers which
+                 don't implement the number input type but support the pattern attribute.
+                 Please note that browsers that support the pattern attribute will make it
+                 fail silently when used with a number field.
+                 Its usage here acts only as a fallback -->
+            <input
+              type="number"
+              min="12"
+              max="120"
+              step="1"
+              id="n1"
+              name="age"
+              pattern="\d+" />
+          </p>
+          <p>
+            <label for="t1"
+              >What's your favorite fruit?<span aria-label="required">*</span></label
+            >
+            <input
+              type="text"
+              id="t1"
+              name="fruit"
+              list="l1"
+              required
+              pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range" />
+            <datalist id="l1">
+              <option>Banana</option>
+              <option>Cherry</option>
+              <option>Apple</option>
+              <option>Strawberry</option>
+              <option>Lemon</option>
+              <option>Orange</option>
+            </datalist>
+          </p>
+          <p>
+            <label for="t2">What's your email address?</label>
+            <input type="email" id="t2" name="email" />
+          </p>
+          <p>
+            <label for="t3">Leave a short message</label>
+            <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+          </p>
+          <p>
+            <button>Submit</button>
+          </p>
+        </form>
+
+
+        <h2>Other content section tags</h2>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article" target="_blank">Article </a>
+                element
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" target="_blank">Footer </a>
+                element
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank">Header </a>
+                element
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank">Nav </a>
+                element
+            </li>
+        </ul>
+
+        <h2>Forms</h2>
+        <form action="/my-handling-form-page" method="post">
+          <fieldset>
+            <legend>Share some basic info with us</legend>
+            <ul>
+              <li>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="user_name" value="Text by default"/>
+              </li>
+              <li>
+                  <label for="mail">Email</label>
+                  <input type="email" id="mail" name="user_mail" value="Write your @mail here"/>
+              </li>
+              <li>
+                  <label for="msg">Message</label>
+                  <textarea cols="20" rows="2" id="msg" name="user_message" resize="none">Leave a comment here or die trying</textarea>
+              </li>
+              <li class="button">
+                  <button type="submit">Send your message</button>
+              </li>
+          </ul>
+          </fieldset>
+        </form>
+
+        <h2>More Complicated Forms</h2>
+        <form>
+          <h3>Payment Form</h3>
+          <p>
+            Required fields are followed by
+            <strong><span aria-label="required">*</span></strong>
+          </p>
+          <section>
+            <h3>Contact Information</h3>
+            <fieldset>
+              <legend>Let us meet you!</legend>
+              <p>
+                <label for="name">
+                  <span>Name: </span>
+                  <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="text" id="name" name="user_name" required />
+              </p>
+              <p>
+                <label for="email">
+                  <span>Email: </span>
+                  <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="email" id="mail" name="user_mail" required multiple />
+              </p>
+              <p>
+                <label for="pwd">
+                  <span>Password: </span>
+                  <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input type="password" id="pwd" name="password" required />
+              </p>
+            </fieldset>
+          </section>
+
+          <section>
+            <fieldset>
+              <legend>Set a date and time for your party: </legend>
+              <input
+                type="datetime-local"
+                name="datetime"
+                min="2024-11-15"
+                max="2025-12-31"
+                id="datetime" />
+            </fieldset>
+          </section>
+
+          <section>
+            <fieldset>
+              <legend>Choose a maximum donation amount</legend>
+              <input
+                type="range"
+                name="price"
+                id="price"
+                min="5000"
+                max="50000"
+                step="1000"
+                value="25000" />
+              <output class="price-output" for="price"></output>
+            </fieldset>
+          </section>
+
+          <section>
+            <h2>Payment Information</h2>
+            <p>
+              <label for="card">
+                <span>Card type: </span>
+              </label>
+              <select id="card" name="usercard">
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express</option>
+              </select>
+            </p>
+            <p>
+              <label for="number">
+                <span>Card Number: </span>
+                <strong><span aria-label="=required">*</span></strong>
+              </label>
+              <input type="tel" id="number" name="cardnumber" required />
+            </p>
+            <p>
+              <label for="expiration">
+                <span>Expiration Date: </span>
+                <strong><span aria-label="required">*</span></strong>
+              </label>
+              <input
+              type="text"
+              id="expiration"
+              name="expiration"
+              required
+              placeholder="MM/YY"
+              pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
+            </p>
+          </section>
+          <section>
+            <p>
+              <button type="submit">Validate the payment</button>
+            </p>
+          </section>
+        </form>
+
+    </body>
+</html>
