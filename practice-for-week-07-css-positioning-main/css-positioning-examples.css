@@ -1,0 +1,45 @@
+.container {
+  background-color: #2b2d2f;
+  position: relative;
+}
+
+.element {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100px;
+  height: 280px;
+  font-size: 36px;
+}
+
+#yellow-box {
+  background-color: #ffff00;
+}
+
+#pink-box {
+  background-color: #ff69b4;
+  left: -20px;
+  position: relative;
+}
+
+#blue-box {
+  background-color: #00eeee;
+}
+
+#purple-box {
+  background-color: #500046;
+  top: 60px;
+  position: absolute;
+}
+
+#green-box {
+  background-color: green;
+  bottom: 30px;
+  position: absolute;
+}
+
+#brown-box {
+  background-color: brown;
+  left: 300px;
+  top: 15%;
+  position: fixed;
+}
