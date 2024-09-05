@@ -1,0 +1,100 @@
+.homepage #catAbb,
+.homepage #go,
+.homepage .leftlinks #cl_app_beta,
+.no-js,
+p.more {
+  display: none;
+}
+
+#logo {
+  font-size: 2.5rem;
+}
+
+.homepage-search .querybox {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid #464646;
+  font-size: 16px;
+}
+
+.menu.collapsible > li {
+  cursor: pointer;
+}
+
+.menu.collapsible > li.expand.s ul {
+  display: block;
+}
+
+.menu.collapsible > li ul {
+  display: none;
+}
+
+/* Your code here */
+* {
+  font-family: Helvetica Neu, Helvetica, sans-serif;
+  background-color: Whitesmoke;
+  color: Charcoal #464646;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:visited {
+  color: #800080;
+}
+
+a:hover {
+  font-weight: bold;
+  color: #800080;
+}
+
+a span:hover {
+  color: #800080;
+}
+
+.page-container {
+  max-width: 1200px;
+}
+
+#leftbar, #center, #rightbar {
+  float: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+#leftbar, #rigthbar {
+  width: 25%;
+}
+
+footer {
+  clear: both;
+}
+
+#center {
+  width: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #464646;
+  border-radius: 10px;
+}
+
+#center > div {
+  float: left;
+  width: 33%;
+}
+
+#topban h2 {
+  text-align: center;
+}
+
+/* phase 4 oending */
