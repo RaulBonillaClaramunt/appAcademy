@@ -2,108 +2,114 @@ html, body {
   font-family: sans-serif;
 }
 
+.header {
+  width: 80%;
+  background-color: #f8f8f8;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px 10px; /* Adjust the padding as needed */
+}
+
+.nav__upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upper__left {
+  top: 0px;
+  left: 10%;
+  width: 20px;
+  height: auto;
+}
+
+.upper__right {
+  display: flex;
+  gap: 10px;
+}
+
 .sign-in,
 .get-started {
   color: green;
-  position: relative;
-  right: 0px;
+  float: right;
+  text-decoration: none;
+}
+
+.sign-in {
+  margin-top: 6px;
+}
+
+.get-started {
+  border-radius: 0.5px;
+  border: solid;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.get-started:hover {
+
+  color: rgb(158, 132, 132);
 }
 
 .nav__lower {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  pading: 10px 20px;
+  margin: 0 6%;
+  padding: 10px 20px;
 }
 .nav__lower a:hover {
   background-color: #555;
 }
 
-.upper__left {
-  postition: absolute;
-  top: 0px;
-  left: 0px;
-  width: 20px;
-  height: auto;
+.content {
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr; /* 1fr represents the flexible space on each side */
+  margin-bottom: 3%;
+}
+
+.content > * {
+  grid-column: 2;
+}
+
+h1, h2, p {
+  text-align: left;
+  display: block;
+  padding: 2px;
+}
+
+.grid {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr 1fr;
+  margin: 0% auto;
+  font-size: 0.7rem;
+}
+
+.grid a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  padding: 3%;
+  text-align: left;
+}
+
+.footer{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .footer__left {
-  position: absolute;
   bottom: 0px;
-  left: 0px;
   width: 20px;
   height: auto;
 }
 
-
-
-/*
-#logo {
-  /* DO NOT EDIT
-  vertical-align: bottom;
-  /* Your code here
-  width: 30px;
-  height: 30px;
+.footer-right {
+  display: flex;
+  gap: 10px;
 }
-
-
-h1 {
-  /* Your code here
-  display: inline;
-}
-
-/* Phase 2
-
-.box {
-  /* DO NOT EDIT
-  vertical-align: top;
-  /* Your code here
-  border-color: black;
-  border-style: dotted;
-  border-width: 4px;
-  background-color: yellowgreen;
-  width: 120px;
-  height: 120px;
-  margin: 10px;
-  padding: 20px;
-  display: inline-block;
-}
-
-.alternate {
-  /* Your code here
-  width: 160px;
-  height: 160px;
-  padding: 0px;
-
-}
-
-/* Phase 3
-
-.footer {
-  /* DO NOT EDIT
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.quote {
-  /* DO NOT EDIT
-  background-color: lightgray;
-  font-size: larger;
-
-  /* Your code here
-  width: fit-content;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-
-}
-
-.attribution {
-  /* DO NOT EDIT
-  font-style: italic;
-
-  /* Your code here
-  display: block;
-}
-*/
