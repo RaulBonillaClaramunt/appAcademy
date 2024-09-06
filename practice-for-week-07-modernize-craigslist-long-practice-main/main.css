@@ -97,4 +97,43 @@ footer {
   text-align: center;
 }
 
+.clfooter + ul {
+  text-align: center;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: gray;
+  padding: 10px 0px;
+}
+
+ul .clfooter > li {
+  display: inline;
+  padding-right: 5px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+}
+
+h4.ban::before {
+  content: "";
+  display: inline-block; /* Allows for width and height to be applied */
+  width: 20px; /* Set the width of the emoji */
+  height: 20px; /* Set the height of the emoji */
+  background-image: url("https://camo.githubusercontent.com/0de307f2901cbc574993080dfcb49455c3ccf3110a8bc7f6d001f95bf8ac17c4/68747470733a2f2f61707061636164656d792d6f70656e2d6173736574732e73332d75732d776573742d312e616d617a6f6e6177732e636f6d2f4d6f64756c652d526573706f6e736976652d44657369676e2f617474726962757465732f6173736574732f70656163652d73796d626f6c2d656d6f6a692e706e67");
+  background-size: contain; /* Ensures the image fits within the specified width and height */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  margin-right: 6px;
+}
+
+td {
+  border-color: #333;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.call {
+  border-collapse: collapse;
+}
+
 /* phase 4 oending */
