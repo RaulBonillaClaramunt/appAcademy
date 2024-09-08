@@ -48,6 +48,14 @@
               border: 1px solid #999;
             }
 
+            input:invalid {
+              box-shadow: 0 0 5px 1px red;
+            }
+
+            input:focus:invalid {
+              box-shadow: none;
+            }
+
             input:focus,
             textarea:focus {
               /* Additional highlight for focused elements */
@@ -254,7 +262,8 @@
               step="1"
               id="n1"
               name="age"
-              pattern="\d+" />
+              pattern="\d+"
+              required />
           </p>
           <p>
             <label for="t1"
