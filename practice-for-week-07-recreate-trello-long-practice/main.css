@@ -1,4 +1,8 @@
 /* Your code here */
+.header-nav__container{
+  background-color: hsla(210, 100%, 50%, 0.7);
+  display: flex;
+}
 
 /* Supplied CSS follows. */
 .header-nav__group{
@@ -48,6 +52,22 @@
   top: 5px;
 }
 
- .header-nav__button > i{
+ .header-nav__button#plus > i {
+  justify-content: flex-end;
   width: 24px;
+}
+
+.header-nav__button#info > i {
+  justify-content: flex-end;
+  width: 24px;
+}
+
+.header-nav__link .header-nav__button #alerts {
+
+}
+
+.header-nav__button#alerts > i {
+  justify-content: flex-end;
+  width: 24px;
+  background-color: rgb(195, 62, 62);
 }
