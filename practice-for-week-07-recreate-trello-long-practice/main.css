@@ -1,12 +1,24 @@
 /* Your code here */
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14 pixels;
+  margin: 0px;
+}
 .header-nav__container{
-  background-color: hsla(210, 100%, 50%, 0.7);
+  background-color: #026AA7;
+  font-size: 16 px;
+  line-height: 20 px;
+  padding: 4px;
+  color: white;
   display: flex;
+  justify-content: space-between; /* Distributes space between groups */
+  align-items: center; /* Aligns items vertically in the center */
 }
 
 /* Supplied CSS follows. */
 .header-nav__group{
   display: flex;
+  align-items: center; /* Aligns items vertically in the center */
 }
 
 .header-nav__button {
@@ -52,22 +64,45 @@
   top: 5px;
 }
 
+.header-nav__group#header_icons {
+  margin-left: auto; /* Pushes this group to the right */
+}
+
  .header-nav__button#plus > i {
-  justify-content: flex-end;
-  width: 24px;
+  width: 20px;
+
 }
 
 .header-nav__button#info > i {
-  justify-content: flex-end;
-  width: 24px;
-}
-
-.header-nav__link .header-nav__button #alerts {
+  width: 20px;
 
 }
 
-.header-nav__button#alerts > i {
-  justify-content: flex-end;
-  width: 24px;
-  background-color: rgb(195, 62, 62);
+#alerts {
+  width: 20px;
+  background-color: #CF513D; /* Set the background color to red */
+  border-radius: 3px; /* Keep the same border radius */
+  padding: 8px; /* Ensure padding is consistent */
+  display: inline-flex; /* Maintain the flex display */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+  color: #fff; /* Set text/icon color to white */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.1s ease; /* Add transition for hover effect */
+}
+
+#alerts:hover {
+  background-color: darkred; /* Darker shade on hover */
+}
+
+@media screen and (max-width: 730px) {
+  /* Hide the header search input field */
+  #search input[type="search"] {
+    display: none; /* Hides the search input */
+  }
+
+  /* Hide the "Boards" text, but leave the boards icon */
+  .boards-label {
+    display: none; /* Hides the "Boards" text */
+  }
 }
