@@ -66,4 +66,11 @@ html, body, div {
 
     /* Phase 2 */
     /* Your code here */
+    display: inline-grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(3, 50px);
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
 }
