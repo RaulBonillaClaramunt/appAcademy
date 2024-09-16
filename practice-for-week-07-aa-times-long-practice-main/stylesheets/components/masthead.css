@@ -15,6 +15,9 @@
 .masthead__action-buttons{
   grid-column: 3;
   grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .masthead__little-technologies{
@@ -37,11 +40,12 @@
   grid-row: 3;
 }
 
-.masthead__menu-and-search__menu-button, .masthead__menu-and-search__search-button {
+.masthead__menu-and-search__menu-button, .masthead__menu-and-search__search-button,
+.masthead__action-buttons__configuration {
   font-size: 11px;
   padding: 7px 9px;
 }
 
 .masthead__menu-and-search__menu-button:hover, .masthead__menu-and-search__search-button:hover {
-  color: #e2e2e2;
+  background-color: #e2e2e2;
 }
