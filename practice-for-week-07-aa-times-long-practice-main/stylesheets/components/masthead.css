@@ -2,6 +2,7 @@
 .masthead {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
 }
 
 .masthead__menu-and-search{
@@ -23,21 +24,27 @@
 .masthead__little-technologies{
   grid-column: 2;
   grid-row: 2;
+  align-items: center;
 }
 
 .masthead__date{
   grid-column: 1;
   grid-row: 3;
+  height: 11px;
+  justify-self: start;
 }
 
 .masthead__logo{
   grid-column: 2;
   grid-row: 3;
+  text-align: center;
 }
 
 .masthead__todays-paper{
   grid-column: 3;
   grid-row: 3;
+  height: 11px;
+  justify-self: end;
 }
 
 .masthead__menu-and-search__menu-button, .masthead__menu-and-search__search-button,
@@ -48,4 +55,15 @@
 
 .masthead__menu-and-search__menu-button:hover, .masthead__menu-and-search__search-button:hover {
   background-color: #e2e2e2;
+}
+
+.masthead__little-technologies > .masthead__little-technologies__links {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #6f6f6f;
+
+}
+
+.css, .html, .javascript, .python {
+  margin: 0 5px;
 }
